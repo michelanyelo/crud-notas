@@ -16,3 +16,6 @@
 11. en el componente nav, reemplazar las anclas por routerlink
 12. reemplazar href por :to="{}"
 13. en routerlink colocar active-class="active" para el active dinamico de pestañas
+14. programar componentes
+15. programar store
+16. crear services

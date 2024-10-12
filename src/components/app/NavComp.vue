@@ -1,5 +1,8 @@
 <script setup>
+import { useNotesStore } from '@/stores/notesStore';
 import { RouterLink } from 'vue-router';
+
+const notesStore = useNotesStore()
 </script>
 
 <template>
@@ -15,7 +18,8 @@ import { RouterLink } from 'vue-router';
                 <div class="navbar-nav ms-auto">
                     <RouterLink active-class="active" class="nav-link" aria-current="page" :to="{ name: 'home' }">Home
                     </RouterLink>
-                    <RouterLink active-class="active" class="nav-link" :to="{ name: 'notas' }">Notas</RouterLink>
+                    <RouterLink active-class="active" class="nav-link" :to="{ name: 'notas' }">Notas ({{
+                        notesStore.notesCount }})</RouterLink>
                 </div>
             </div>
         </div>
