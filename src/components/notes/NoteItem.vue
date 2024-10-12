@@ -27,10 +27,11 @@ const notesStore = useNotesStore()
                                 Editar</RouterLink>
                         </li>
                         <li>
-                            <a class="dropdown-item text-danger" @click="notesStore.removeNotes(note._uuid)">
+                            <button class="dropdown-item text-danger" @click="notesStore.removeNotes(note._uuid)">
                                 Eliminar
-                            </a>
+                            </button>
                         </li>
+
                     </ul>
                 </div>
             </div>
