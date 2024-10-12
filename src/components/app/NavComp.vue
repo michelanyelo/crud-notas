@@ -13,8 +13,9 @@ import { RouterLink } from 'vue-router';
             </button>
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div class="navbar-nav ms-auto">
-                    <RouterLink class="nav-link active" aria-current="page" :to="{ name: 'home' }">Home</RouterLink>
-                    <!-- <RouterLink class="nav-link" :to="{ name: 'notas' }">Notas</RouterLink> -->
+                    <RouterLink active-class="active" class="nav-link" aria-current="page" :to="{ name: 'home' }">Home
+                    </RouterLink>
+                    <RouterLink active-class="active" class="nav-link" :to="{ name: 'notas' }">Notas</RouterLink>
                 </div>
             </div>
         </div>

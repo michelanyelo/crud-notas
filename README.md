@@ -14,4 +14,5 @@
 10. en main.scss importar variables.scss
     @import './abstracts/variables.scss'
 11. en el componente nav, reemplazar las anclas por routerlink
-12. reemplazar href por to
+12. reemplazar href por :to="{}"
+13. en routerlink colocar active-class="active" para el active dinamico de pestañas
