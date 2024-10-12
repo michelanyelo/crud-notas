@@ -12,4 +12,6 @@
    import './assets/styles/scss/main.scss'
 9. en carpeta abstracts crear \_variables.scss para variables globales
 10. en main.scss importar variables.scss
-    @import './abstracts/variables.scss';
+    @import './abstracts/variables.scss'
+11. en el componente nav, reemplazar las anclas por routerlink
+12. reemplazar href por to
