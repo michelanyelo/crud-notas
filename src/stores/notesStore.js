@@ -1,4 +1,4 @@
-import { createNote, deleteNote, fetchAllNotes, updateNote } from "@/services/notes.service";
+import { createNote, deleteNote, fetchAllNotes, fetchSingleNote, updateNote } from "@/services/notes.service";
 import { defineStore } from "pinia";
 import { computed, ref } from "vue";
 
@@ -55,12 +55,29 @@ export const useNotesStore = defineStore("notes", () => {
         }
     }
 
+    // Leer solo una nota (local)
+    const getLocalNote = (id) => {
+        return notes.value.find(note => note._uuid === id)
+    }
+
+    // Leer solo una nota (desde api)
+    const getNote = async (id) => {
+        let noteData = getLocalNote(id)
+
+        if (!noteData) {
+            noteData = await fetchSingleNote(id)
+        }
+
+        return noteData
+    }
+
     return {
         notes,
         notesCount,
         addNote,
         getNotes,
         removeNotes,
-        editNote
+        editNote,
+        getNote
     }
 })

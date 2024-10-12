@@ -24,11 +24,11 @@ const router = createRouter({
       name: 'editar-nota',
       component: () => import('../views/NoteFormView.vue')
     },
-    // {
-    //   path: '/notas/eliminar/:id',
-    //   name: 'eliminar-nota',
-    //   component: () => import('../views/NoteFormView.vue')
-    // }
+    {
+      path: '/:pathMatch(.*)*',
+      name: 'not-found',
+      component: () => import('../views/NotFoundView.vue')
+    }
   ]
 })
 

@@ -54,3 +54,14 @@ export const updateNote = async (id, form) => {
         console.error(error)
     }
 }
+
+// Leer nota individual
+export const fetchSingleNote = async (id) => {
+    try {
+        const response = await api.get(`/notes/${id}`)
+
+        return response.data
+    } catch (error) {
+        console.error(error)
+    }
+}
