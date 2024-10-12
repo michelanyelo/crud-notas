@@ -2,6 +2,14 @@
 import { RouterView } from 'vue-router'
 import NavComp from './components/app/NavComp.vue';
 import FooterComp from './components/app/FooterComp.vue';
+import { onMounted } from 'vue';
+import { useNotesStore } from './stores/notesStore';
+
+const notesStore = useNotesStore()
+
+onMounted(() => {
+  notesStore.getNotes()
+})
 </script>
 
 <template>
