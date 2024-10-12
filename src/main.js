@@ -8,6 +8,9 @@ import router from './router'
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap/dist/js/bootstrap.bundle.js'
 
+// bs icons
+import 'bootstrap-icons/font/bootstrap-icons.css'
+
 // scss
 import './assets/styles/scss/main.scss'
 
