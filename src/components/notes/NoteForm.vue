@@ -17,12 +17,13 @@ const handleSubmit = () => {
         <form @submit.prevent="handleSubmit">
             <div class="mb-3">
                 <label for="title">Titulo</label>
-                <input type="text" id="title" placeholder="Titulo de la nota" required v-model="noteData.title">
+                <input class="form-control" type="text" id="title" placeholder="Titulo de la nota" required
+                    v-model="noteData.title">
             </div>
 
             <div class="mb-3">
                 <label for="content">Contenido</label>
-                <textarea id="content" placeholder="Contenido de la nota" required
+                <textarea class="form-control" id="content" placeholder="Contenido de la nota" required
                     v-model="noteData.content"></textarea>
             </div>
 
