@@ -18,7 +18,7 @@ const notesStore = useNotesStore()
                 <div class="navbar-nav ms-auto">
                     <RouterLink active-class="active" class="nav-link" aria-current="page" :to="{ name: 'home' }">Inicio
                     </RouterLink>
-                    <RouterLink active-class="active" class="nav-link" :to="{ name: 'notas' }">Notas ({{
+                    <RouterLink active-class="active" class="nav-link" :to="{ name: 'notas' }">Mis notas ({{
                         notesStore.notesCount }})</RouterLink>
                 </div>
             </div>
