@@ -34,6 +34,7 @@ export const fetchAllNotes = async () => {
     }
 }
 
+// Eliminar una nota
 export const deleteNote = async (id) => {
     try {
         await api.delete(`/notes/${id}`)
@@ -41,5 +42,15 @@ export const deleteNote = async (id) => {
     } catch (error) {
         console.error(error)
         return false
+    }
+}
+
+// Editar una nota
+export const updateNote = async (id, form) => {
+    try {
+        const response = await api.put(`/notes/${id}`, form)
+        return response.data
+    } catch (error) {
+        console.error(error)
     }
 }
