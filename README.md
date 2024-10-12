@@ -1,41 +1,15 @@
-# crud-notas
-
-This template should help get you started developing with Vue 3 in Vite.
-
-## Recommended IDE Setup
-
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
-
-## Customize configuration
-
-See [Vite Configuration Reference](https://vite.dev/config/).
-
-## Project Setup
-
-```sh
-npm install
-```
-
-### Compile and Hot-Reload for Development
-
-```sh
-npm run dev
-```
-
-### Compile and Minify for Production
-
-```sh
-npm run build
-```
-
-### Run Unit Tests with [Vitest](https://vitest.dev/)
-
-```sh
-npm run test:unit
-```
-
-### Lint with [ESLint](https://eslint.org/)
-
-```sh
-npm run lint
-```
+1. npm create vue@latest
+2. npm i
+3. npm run dev
+4. npm i bootstrap
+5. en main.js
+   import 'bootstrap/dist/css/bootstrap.css'
+   import 'bootstrap/dist/js/bootstrap.bundle.js'
+6. npm i -D sass
+7. en assets crear estructura básica
+   assets/styles/scss/main.scss
+8. en main.js importar main.scss
+   import './assets/styles/scss/main.scss'
+9. en carpeta abstracts crear \_variables.scss para variables globales
+10. en main.scss importar variables.scss
+    @import './abstracts/variables.scss';
