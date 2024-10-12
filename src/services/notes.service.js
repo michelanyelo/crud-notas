@@ -1,17 +1,18 @@
 import axios from "axios"
 
-// peticiones API
+// Peticiones
+const api = axios.create({
+    baseURL: "https://crudapi.co.uk/api/v1/",
+    headers: {
+        "Content-Type": "application/json",
+        "Authorization": `Bearer ${import.meta.env.VITE_API_KEY}`
+    }
+})
+
+// Crear nota
 export const createNote = async (newNote) => {
     try {
-        const response = await axios({
-            method: "post",
-            url: "https://crudapi.co.uk/api/v1/notes",
-            data: [newNote],
-            headers: {
-                "Content-Type": "application/json",
-                "Authorization": `Bearer ${import.meta.env.VITE_API_KEY}`
-            }
-        })
+        const response = await api.post("/notes", [newNote])
 
         const newNoteData = response.data.items[0]
 
@@ -19,5 +20,16 @@ export const createNote = async (newNote) => {
 
     } catch (error) {
         console.error("Error al crear nota:", error)
+    }
+}
+
+// Leer todas las notas
+export const fetchAllNotes = async () => {
+    try {
+        const response = await api.get("/notes")
+
+        return response.data.items
+    } catch (error) {
+        console.error(error)
     }
 }
