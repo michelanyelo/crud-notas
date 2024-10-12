@@ -7,7 +7,14 @@ const noteData = ref({
 })
 
 const handleSubmit = () => {
-    alert("submit")
+    const isValid = noteData.value.title.trim() && noteData.value.content.trim()
+    if (isValid) {
+        alert("Guardando...")
+        console.log(noteData.value)
+    } else {
+        alert("Todos los campos son requeridos")
+    }
+
 }
 
 </script>
