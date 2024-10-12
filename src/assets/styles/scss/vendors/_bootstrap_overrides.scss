@@ -1,5 +1,6 @@
-.btn {
-    border-radius: 10px;
+.btn,
+.form-control {
+    border-radius: $main-border-radius;
 }
 
 .bg-info {
