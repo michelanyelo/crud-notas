@@ -33,3 +33,13 @@ export const fetchAllNotes = async () => {
         console.error(error)
     }
 }
+
+export const deleteNote = async (id) => {
+    try {
+        await api.delete(`/notes/${id}`)
+        return true
+    } catch (error) {
+        console.error(error)
+        return false
+    }
+}

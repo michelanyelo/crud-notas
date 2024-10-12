@@ -1,4 +1,4 @@
-import { createNote, fetchAllNotes } from "@/services/notes.service";
+import { createNote, deleteNote, fetchAllNotes } from "@/services/notes.service";
 import { defineStore } from "pinia";
 import { computed, ref } from "vue";
 
@@ -27,10 +27,19 @@ export const useNotesStore = defineStore("notes", () => {
         }
     }
 
+    // Eliminar notas
+    const removeNotes = async (id) => {
+        const isValid = await deleteNote(id)
+        if (isValid) {
+            notes.value = notes.value.filter(note => note._uuid !== id)
+        }
+    }
+
     return {
         notes,
         notesCount,
         addNote,
-        getNotes
+        getNotes,
+        removeNotes
     }
 })
