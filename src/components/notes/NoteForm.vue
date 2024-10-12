@@ -1,22 +1,28 @@
 <script setup>
 import { ref } from 'vue';
+import { useNotesStore } from '@/stores/notesStore';
+import router from '@/router';
 
 const noteData = ref({
     title: "",
     content: ""
 })
 
-const handleSubmit = () => {
+const notesStore = useNotesStore()
+
+const handleSubmit = async () => {
     const isValid = noteData.value.title.trim() && noteData.value.content.trim()
-    if (isValid) {
-        alert("Guardando...")
-        console.log(noteData.value)
-    } else {
+    if (!isValid) {
         alert("Todos los campos son requeridos")
+        return
     }
 
-}
+    const response = await notesStore.addNote(noteData.value)
 
+    if (response) {
+        router.push({ name: "notas" })
+    }
+}
 </script>
 
 <template>

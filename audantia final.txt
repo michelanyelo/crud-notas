@@ -19,3 +19,4 @@
 14. programar componentes
 15. programar store
 16. crear services
+17. store consume el axios service. luego este store se importa en el componente
