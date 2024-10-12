@@ -9,7 +9,9 @@ import FooterComp from './components/app/FooterComp.vue';
   <div class="min-vh-100 d-flex flex-column">
     <NavComp />
 
-    <RouterView class="flex-fill" />
+    <main class="flex-fill py-2">
+      <RouterView class="container" />
+    </main>
 
     <FooterComp />
   </div>
