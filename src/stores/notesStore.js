@@ -53,6 +53,8 @@ export const useNotesStore = defineStore("notes", () => {
                 return note
             })
         }
+
+        return updateNoteData
     }
 
     // Leer solo una nota (local)

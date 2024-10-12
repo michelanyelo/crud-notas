@@ -18,7 +18,7 @@ const props = defineProps({
 watch(
     () => props.initialNote,
     ({ title, content }) => {
-        noteData.value = { title, content };
+        noteData.value = { title, content }
     },
     { immediate: true } // Para que también reaccione en el montaje inicial
 );
@@ -28,15 +28,21 @@ watch(
 const notesStore = useNotesStore();
 
 const handleSubmit = async () => {
-    try {
-        const response = await notesStore.addNote(noteData.value);
-        if (response) {
-            router.push({ name: "notas" });
-        } else {
-            alert("Error al agregar la nota");
-        }
-    } catch (error) {
-        alert("Ocurrió un error: " + error.message);
+    // Validar siempre los campos
+    const inputsAreValid = noteData.value.title.trim() && noteData.value.content.trim()
+    if (!inputsAreValid) {
+        // validacion basica de campos
+        alert("Por favor, rellene todos los campos")
+        return
+    }
+
+    const response = props.initialNote ?
+        await notesStore.editNote(props.initialNote._uuid, noteData.value) :
+        await notesStore.addNote(noteData.value)
+
+    // redireccionar al guardar
+    if (response) {
+        router.push({ name: 'notas' })
     }
 };
 </script>
